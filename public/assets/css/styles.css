@@ -4,6 +4,9 @@ html, body {
   padding: 0;
 }
 
+.navbar-custom{
+  background-color: #000000;
+}
 
 .save-note {
   display: none;
