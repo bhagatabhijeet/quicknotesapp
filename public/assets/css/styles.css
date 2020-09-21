@@ -36,6 +36,10 @@ html, body {
   color:#4fbaf3;
 }
 
+.icondiv{
+  display: inline;
+}
+
 .display-4{
   font-family: 'Lobster', cursive;
 }
@@ -132,5 +136,22 @@ footer{
   color: crimson;
 }
 
+.icondiv{
+  position: relative;
+}
+
+.tooltiptext{
+  position: absolute;
+  display: none;
+  color: white;
+  left: 0%;
+  width: 100px;
+  font-size: 12px;
+  color:#23a9f2;
+}
+
+.icondiv:hover .tooltiptext{
+  display: block;
+}
 
 
