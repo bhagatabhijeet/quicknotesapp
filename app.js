@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const serverUtil = require('./serverutils');
+const { dataBase } = require('./serverutils');
 
 
 const app = express();
@@ -29,14 +30,15 @@ app.get("/notes",(req,res)=>{
 
 app.get("/api/notes", (req, res) => {
     // console.log(dbPath);
-    let rawdata = fs.readFileSync(dbPath);
-    let jsonData = JSON.parse(rawdata);
-    res.json(jsonData); 
+    // let rawdata = fs.readFileSync(dbPath);
+    // let jsonData = JSON.parse(rawdata);
+    res.json(dataBase.jsonData()); 
 });
 
 app.post("/api/notes", (req, res) => {
     // console.log(req.data);
-    const postedNote =  serverUtil.storeNote(req.body)
+    // const postedNote =  serverUtil.storeNote(req.body)
+    postedNote = dataBase.addNote(req.body);
     // let rawdata = fs.readFileSync(dbPath);
     // let jsonData = JSON.parse(rawdata);
     // jsonData.push(req.body);
@@ -51,6 +53,10 @@ app.post("/api/notes", (req, res) => {
     res.json(postedNote);
 });
 
+app.delete("/api/notes/:id",(req,res)=>{
+    serverUtil.dataBase.deleteNote(req.params.id);
+    res.end();
+});
 
 app.listen(PORT, () => {
     console.log("Server Started on port : " + PORT);
