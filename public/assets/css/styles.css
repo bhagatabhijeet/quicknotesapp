@@ -24,9 +24,13 @@ html, body {
   display: none;
 }
 
+.edit-note{
+  display: none;
+}
+
 .icons i {
   margin-left: 15px;
-  margin-right: 15px;
+  margin-right: 15px; 
   font-size: 1.1rem;
   cursor: pointer;  
   color:#4fbaf3;
@@ -35,6 +39,7 @@ html, body {
 .display-4{
   font-family: 'Lobster', cursive;
 }
+
 .h4text{
   font-family: 'Tangerine', cursive;
   font-size: 60px;
@@ -51,12 +56,14 @@ html, body {
   resize: none;
   height: calc(100% - 63px);
   padding-top: 15px;
+  visibility: hidden;
 }
 
 .note-title {
   height: 50px;
   margin-top: 13px;
   font-size: 3rem;
+  visibility: hidden;
 }
 
 .note-title:read-only, .note-textarea:read-only {
@@ -105,5 +112,19 @@ footer{
   height: 30px;
   text-align: center;
   font-size: 17px;
+}
+
+#closeNote{
+  color: #4fbaf3;
+  background-color: #000000;
+  position: absolute;
+  top:13px;
+  right:15px;
+  width:20px;
+  border: 1px solid black;
+  /* border-radius: 2px; */
+  text-align: center;
+  cursor: pointer;
+  visibility: hidden;
 }
 
