@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const serverUtil = require('./serverutils');
 
 
 const app = express();
@@ -27,7 +28,7 @@ app.get("/notes",(req,res)=>{
 
 
 app.get("/api/notes", (req, res) => {
-    console.log(dbPath);
+    // console.log(dbPath);
     let rawdata = fs.readFileSync(dbPath);
     let jsonData = JSON.parse(rawdata);
     res.json(jsonData); 
@@ -35,16 +36,19 @@ app.get("/api/notes", (req, res) => {
 
 app.post("/api/notes", (req, res) => {
     // console.log(req.data);
-    let rawdata = fs.readFileSync(dbPath);
-    let jsonData = JSON.parse(rawdata);
-    jsonData.push(req.body);
+    const postedNote =  serverUtil.storeNote(req.body)
+    // let rawdata = fs.readFileSync(dbPath);
+    // let jsonData = JSON.parse(rawdata);
+    // jsonData.push(req.body);
     
-    fs.writeFileSync(dbPath,JSON.stringify(jsonData));
+    // fs.writeFileSync(dbPath,JSON.stringify(jsonData));
     // console.log(dbPath);
     // let rawdata = fs.readFileSync(dbPath);
     // let jsonData = JSON.parse(rawdata);
     // res.json(jsonData);
-    res.json();
+    // res.json("");
+    // res.json(req.body);
+    res.json(postedNote);
 });
 
 
