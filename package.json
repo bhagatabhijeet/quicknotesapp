@@ -20,5 +20,8 @@
   "homepage": "https://github.com/bhagatabhijeet/quicknotesapp#readme",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "nodemonConfig": {
+    "ignore": ["*.json"]
+ }
 }
