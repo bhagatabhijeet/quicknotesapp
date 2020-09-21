@@ -128,3 +128,9 @@ footer{
   visibility: hidden;
 }
 
+.delete-note:hover{
+  color: crimson;
+}
+
+
+
