@@ -121,12 +121,12 @@ const renderNoteList = (notes) => {
 
   // Returns jquery object for li with given text and delete button
   // unless withDeleteButton argument is provided as false
-  const create$li = (text, withDeleteButton = true,id) => {
+  const create$li = (text, withDeleteButton = true) => {
     const $li = $("<li class='list-group-item'>");
     $li.css("background-color","#f1f1f1");
-    if(activeNote.id === id && typeof activeNote.id !== 'undefined'){
-      $li.css("background-color","#4fbaf3");
-    }
+    // if(activeNote.id === id && typeof activeNote.id !== 'undefined'){
+    //   $li.css("background-color","#4fbaf3");
+    // }
     const $span = $("<span>").text(text);
     $li.append($span);
 
@@ -143,10 +143,15 @@ const renderNoteList = (notes) => {
     noteListItems.push(create$li("No saved Notes", false));
   }
 
-  notes.forEach((note) => {
-    const $li = create$li(note.title,true,note.id).data(note);
-    noteListItems.push($li);
-  });
+  for(let note of notes){
+    const $li = create$li(note.title,true).data(note);
+    noteListItems.push($li)
+  }
+
+  // notes.forEach((note) => {
+  //   const $li = create$li(note.title,true).data(note);
+  //   noteListItems.push($li);
+  // });
 
   $noteList.append(noteListItems);
 };
