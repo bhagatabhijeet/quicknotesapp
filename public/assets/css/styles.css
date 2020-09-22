@@ -59,15 +59,13 @@ html, body {
 .note-textarea {
   resize: none;
   height: calc(100% - 63px);
-  padding-top: 15px;
-  /* visibility: hidden; */
+  padding-top: 15px;  
 }
 
 .note-title {
   height: 50px;
   margin-top: 13px;
   font-size: 3rem;
-  /* visibility: hidden; */
 }
 
 .note-title:read-only, .note-textarea:read-only {
@@ -77,9 +75,6 @@ html, body {
 
 .list-container .card {
   height: calc(100vh - 70px);
-  /* border-bottom: none;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0; */
   width: 94%;
   margin-left: auto;
   margin-right: auto;
@@ -94,8 +89,6 @@ html, body {
 .list-container .list-group-item:first-child,
 .list-container .card {
   border-top: none;
-  /* border-top-right-radius: 0;
-  border-top-left-radius: 0; */
 }
 
 .list-container i {
@@ -104,12 +97,11 @@ html, body {
 }
 
 .list-container .list-group-item {
-  /* border-left: none;
-  border-right: none; */
   padding: 20px;
   cursor: pointer;
 }
 
+/* footer */
 footer{
   background-color: #383838;
   color:#4fbaf3;
@@ -118,20 +110,7 @@ footer{
   font-size: 17px;
 }
 
-#closeNote{
-  color: #4fbaf3;
-  background-color: #000000;
-  position: absolute;
-  top:13px;
-  right:15px;
-  width:20px;
-  border: 1px solid black;
-  /* border-radius: 2px; */
-  text-align: center;
-  cursor: pointer;
-  visibility: hidden;
-}
-
+/* change color of delete icon on hover */
 .delete-note:hover{
   color: crimson;
 }
@@ -140,6 +119,7 @@ footer{
   position: relative;
 }
 
+/* css selector for tooltip */
 .tooltiptext{
   position: absolute;
   display: none;
@@ -150,6 +130,7 @@ footer{
   color:#23a9f2;
 }
 
+/* display tooltip */
 .icondiv:hover .tooltiptext{
   display: block;
 }

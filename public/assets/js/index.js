@@ -6,7 +6,6 @@ const $noteList = $(".list-container .list-group");
 
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
-let elem={};
 
 // A function for getting all notes from the db
 const getNotes = () => {
@@ -82,18 +81,16 @@ const handleNoteDelete = function (event) {
 
 // Sets the activeNote and displays it
 const handleNoteView = function (event) {
-  // console.log($noteList.children.count());
   let ch = $noteList.children();
+  // change background color of all list items befor changing the active note's color
   ch.css('background-color','#f1f1f1')
-  // for(let c of ch){
-  //   c.css('background-color',"#f1f1f1");
-  // }
+  
   let elem = $(this);
-  // activeNote = $(this).data();
+  
   activeNote = elem.data();
-  elem.css("background-color","#4fbaf3");
-  console.log("note",elem.css("background-color"));
-  // $(this).css("background-color","red");
+
+  // Selected note's background color change
+  elem.css("background-color","#4fbaf3");  
   renderActiveNote();
 };
 
@@ -123,10 +120,7 @@ const renderNoteList = (notes) => {
   // unless withDeleteButton argument is provided as false
   const create$li = (text, withDeleteButton = true) => {
     const $li = $("<li class='list-group-item'>");
-    $li.css("background-color","#f1f1f1");
-    // if(activeNote.id === id && typeof activeNote.id !== 'undefined'){
-    //   $li.css("background-color","#4fbaf3");
-    // }
+    $li.css("background-color","#f1f1f1");    
     const $span = $("<span>").text(text);
     $li.append($span);
 
@@ -143,15 +137,11 @@ const renderNoteList = (notes) => {
     noteListItems.push(create$li("No saved Notes", false));
   }
 
+  // changed the foreach to for of loop.
   for(let note of notes){
     const $li = create$li(note.title,true).data(note);
     noteListItems.push($li)
   }
-
-  // notes.forEach((note) => {
-  //   const $li = create$li(note.title,true).data(note);
-  //   noteListItems.push($li);
-  // });
 
   $noteList.append(noteListItems);
 };

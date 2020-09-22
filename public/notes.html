@@ -7,16 +7,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Quick Notes</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
 <body>
   <nav class="navbar navbar-custom">
-    <a class="navbar-brand" href="/"><img src="assets/images/logo_trans.png" class="d-inline-block align-top logoimg"/>
+    <a class="navbar-brand" href="/"><img src="assets/images/logo_trans.png" class="d-inline-block align-top logoimg" />
     </a>
-  
+
+    <!-- icons embedded in icondiv for tootips on hover -->
     <div class="icons">
       <div class="icondiv">
         <i class="fas fa-file-alt new-note"></i>
@@ -26,10 +27,6 @@
         <i class="fas fa-save save-note"></i>
         <span class="tooltiptext">Save Note</span>
       </div>
-
-      <!-- <i class="fas fa-file-alt new-note"></i>
-      <i class="fas fa-save save-note"></i> -->
-      <!-- <i class="fas fa-edit edit-note"></i>       -->
     </div>
   </nav>
   <div class="container-fluid">
@@ -40,16 +37,17 @@
           </ul>
         </div>
       </div>
-      <div class="col-8">        
+      <div class="col-8">
         <input class="note-title" placeholder="Note Title" maxlength="28" type="text">
         <span id='closeNote'>x</span>
         <textarea class="note-textarea" placeholder="Note Text"></textarea>
       </div>
     </div>
   </div>
-  <footer>© 2020 Abhijeet Bhagat.  <a href="https://github.com/bhagatabhijeet" target="_blank"><i class="fab fa-github-square"></i></a></footer>
+  <footer>© 2020 Abhijeet Bhagat. <a href="https://github.com/bhagatabhijeet" target="_blank"><i
+        class="fab fa-github-square"></i></a></footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- client side index.js script -->
   <script src="/assets/js/index.js"></script>
 </body>
-
 </html>
