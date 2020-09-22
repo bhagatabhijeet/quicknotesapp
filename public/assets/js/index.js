@@ -83,14 +83,14 @@ const handleNoteDelete = function (event) {
 const handleNoteView = function (event) {
   let ch = $noteList.children();
   // change background color of all list items befor changing the active note's color
-  ch.css('background-color','#f1f1f1')
-  
+  ch.css('background-color', '#f1f1f1')
+
   let elem = $(this);
-  
+
   activeNote = elem.data();
 
   // Selected note's background color change
-  elem.css("background-color","#4fbaf3");  
+  elem.css("background-color", "#4fbaf3");
   renderActiveNote();
 };
 
@@ -120,7 +120,7 @@ const renderNoteList = (notes) => {
   // unless withDeleteButton argument is provided as false
   const create$li = (text, withDeleteButton = true) => {
     const $li = $("<li class='list-group-item'>");
-    $li.css("background-color","#f1f1f1");    
+    $li.css("background-color", "#f1f1f1");
     const $span = $("<span>").text(text);
     $li.append($span);
 
@@ -138,8 +138,8 @@ const renderNoteList = (notes) => {
   }
 
   // changed the foreach to for of loop.
-  for(let note of notes){
-    const $li = create$li(note.title,true).data(note);
+  for (let note of notes) {
+    const $li = create$li(note.title, true).data(note);
     noteListItems.push($li)
   }
 
